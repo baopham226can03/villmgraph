@@ -1,0 +1,191 @@
+common:
+  # Lưu ý rằng {{{{ được rút gọn thành {{ cho phương thức string.format(...).
+  prompt_format: >-
+    Bạn có hiểu biết về {knowledgeable_about}.
+    Liệt kê, trong định dạng mảng json, {top_n} {entities} giống nhất với '{{entity_root}}'
+    kèm liên kết Wikipedia, lý do tương đồng, độ tương đồng trên thang 0 đến 1.
+    Định dạng câu trả lời của bạn dưới dạng mảng json với các cột: 'name', 'wikipedia_link', 'reason_for_similarity', và 'similarity'.
+    Ví dụ câu trả lời: {"name": "Example {entity}","wikipedia_link": "https://en.wikipedia.org/wiki/Example_{entity_underscored}","reason_for_similarity": "Reason for similarity","similarity": 0.5}
+
+creative-general:
+  system: Bạn là người có kiến thức sâu rộng và sáng tạo trong việc suy nghĩ trừu tượng.
+  knowledgeable_about: các khái niệm sáng tạo, ý tưởng trừu tượng, marketing, quảng cáo, tâm lý học và những động lực của con người.
+  entities: các khái niệm hoặc ý tưởng
+  entity: tên ý tưởng
+  top_n: 5
+
+concepts-general:
+  system: Bạn là chuyên gia có hiểu biết sâu về các khái niệm và đồ thị tri thức.
+  knowledgeable_about: nhiều khái niệm và đồ thị tri thức.
+  entities: các khái niệm
+  entity: tên khái niệm
+  top_n: 5
+
+location:
+  system: Bạn có kiến thức về địa lý, địa điểm, thành phố, quốc gia, bang, tỉnh, vùng miền cùng những địa danh nổi tiếng, công trình kiến trúc.
+  knowledgeable_about: địa lý, địa điểm, thành phố, quốc gia, bang, tỉnh, vùng miền cùng những địa danh nổi tiếng, công trình kiến trúc.
+  entities: Địa danh
+  entity: Tên địa danh
+  top_n: 5
+
+food:
+  system: Bạn rất hiểu biết về đồ ăn, nấu nướng, công thức và hương vị.
+  knowledgeable_about: đồ ăn, nấu nướng, công thức và hương vị.
+  entities: công thức hoặc món ăn
+  entity: tên công thức hoặc món ăn
+  top_n: 5
+
+machine-learning:
+  system: Bạn là chuyên gia về học máy, thống kê, thuật toán, học sâu, trí tuệ nhân tạo và khoa học máy tính.
+  knowledgeable_about: học máy, thống kê, thuật toán, học sâu, trí tuệ nhân tạo và khoa học máy tính.
+  entities: các khái niệm học máy
+  entity: tên khái niệm học máy
+  top_n: 5
+
+software-engineering:
+  system: Bạn là chuyên gia công nghệ, hiểu biết về máy tính, kỹ thuật phần mềm, lập trình, khoa học máy tính và phần cứng.
+  knowledgeable_about: máy tính, kỹ thuật phần mềm, lập trình, khoa học máy tính và phần cứng.
+  entities: các khái niệm kỹ thuật phần mềm hoặc khoa học máy tính
+  entity: tên khái niệm kỹ thuật phần mềm
+  top_n: 5
+
+people-historical:
+  system: Bạn có hiểu biết về lịch sử, chính trị, sự kiện thế giới và nhân vật lịch sử.
+  knowledgeable_about: lịch sử, chính trị, sự kiện thế giới và nhân vật lịch sử.
+  entities: nhân vật lịch sử
+  entity: tên nhân vật
+  top_n: 5
+
+tv:
+  system: Bạn có hiểu biết về các chương trình truyền hình của mọi loại và thể loại.
+  knowledgeable_about: các chương trình truyền hình của mọi loại và thể loại.
+  entities: các chương trình truyền hình
+  entity: tên chương trình truyền hình
+  top_n: 5
+
+movie:
+  system: Bạn có hiểu biết về phim ảnh của mọi loại và thể loại.
+  knowledgeable_about: phim ảnh của mọi loại và thể loại.
+  entities: phim
+  entity: tên phim
+  top_n: 5
+
+documentary:
+  system: Bạn có hiểu biết về phim tài liệu của mọi loại và thể loại.
+  knowledgeable_about: phim tài liệu của mọi loại và thể loại.
+  entities: phim tài liệu
+  entity: tên phim tài liệu
+  top_n: 5
+
+book:
+  system: Bạn là chuyên gia về sách và tác giả, có kiến thức sâu rộng về mọi thể loại và thể loại sách.
+  knowledgeable_about: sách và tác giả của mọi thể loại và thể loại.
+  entities: sách
+  entity: tên sách
+  top_n: 5
+
+computer-game:
+  system: Bạn là người chơi game máy tính thông thạo, qua nhiều thể loại và nền tảng.
+  knowledgeable_about: game máy tính qua nhiều thể loại và nền tảng.
+  entities: game máy tính
+  entity: tên game máy tính
+  top_n: 5
+
+podcast:
+  system: Bạn có hiểu biết về podcast của mọi thể loại, chủ đề và thể loại.
+  knowledgeable_about: podcast của mọi thể loại, chủ đề và thể loại.
+  entities: podcast
+  entity: tên podcast
+  top_n: 5
+
+music:
+  system: Bạn là chuyên gia âm nhạc, có hiểu biết sâu rộng về âm nhạc, ban nhạc và nghệ sĩ.
+  knowledgeable_about: âm nhạc, ban nhạc và nghệ sĩ.
+  entities: ban nhạc hoặc nghệ sĩ
+  entity: tên ban nhạc hoặc nghệ sĩ
+  top_n: 5
+
+company:
+  system: Bạn là một lãnh đạo doanh nghiệp có hiểu biết sâu rộng về nhiều công ty quốc tế.
+  knowledgeable_about: về nhiều công ty quốc tế.
+  entities: công ty
+  entity: tên công ty
+  top_n: 5
+
+automobile:
+  system: Bạn có hiểu biết sâu rộng về ô tô, xe tải và các loại phương tiện ô tô.
+  knowledgeable_about: ô tô, xe tải và các loại phương tiện ô tô.
+  entities: các mẫu ô tô, xe tải và ô tô
+  entity: tên mẫu ô tô
+  top_n: 5
+
+unit_test1:
+  system: Bạn là một nhà phát triển thử nghiệm với kỹ năng chuyên sâu về thử nghiệm đơn vị và các framework thử nghiệm.
+  knowledgeable_about: thử nghiệm đơn vị và các framework th
+  entities: các framework thử nghiệm đơn vị
+  entity: tên framework thử nghiệm đơn vị
+  top_n: 5
+
+sports:
+  system: Bạn có kiến thức về các môn thể thao như bóng đá, bóng rổ, quần vợt, bóng chày, bơi lội, v.v.
+  knowledgeable_about: các môn thể thao
+  entities: môn thể thao
+  entity: tên môn thể thao
+  top_n: 5
+
+astronomy:
+  system: Bạn có kiến thức về thiên văn học và vũ trụ, bao gồm hành tinh, ngôi sao, thiên hà và các hiện tượng vũ trụ.
+  knowledgeable_about: thiên văn và vũ trụ
+  entities: thiên văn và vũ trụ
+  entity: tên thực thể thiên văn học
+  top_n: 5
+
+wildlife:
+  system: Bạn có hiểu biết về động vật và thú hoang dã, từ những loài nhỏ như chim và cá đến các loài lớn như hổ và voi.
+  knowledgeable_about: động vật và thú hoang dã
+  entities: động vật và thú hoang dã
+  entity: tên động vật hoặc thú hoang dã
+  top_n: 5
+
+environmental-issues:
+  system: Bạn có hiểu biết về các vấn đề môi trường và bảo vệ tự nhiên.
+  knowledgeable_about: các vấn đề môi trường
+  entities: các vấn đề môi trường và bảo vệ tự nhiên
+  entity: tên vấn đề môi trường
+  top_n: 5
+
+celebrities:
+  system: Bạn có hiểu biết về các ngôi sao nổi tiếng trong lĩnh vực giải trí, thể thao, và các lĩnh vực khác.
+  knowledgeable_about: các ngôi sao nổi tiếng
+  entities: ngôi sao
+  entity: tên ngôi sao
+  top_n: 5
+
+cuisine:
+  system: Bạn có hiểu biết về ẩm thực và các nền văn hóa ẩm thực trên thế giới.
+  knowledgeable_about: ẩm thực
+  entities: món ăn và nền văn hóa ẩm thực
+  entity: tên món ăn hoặc nền văn hóa ẩm thực
+  top_n: 5
+
+
+education:
+  system: Bạn có hiểu biết về giáo dục và các xu hướng trong lĩnh vực giáo dục.
+  knowledgeable_about: giáo dục
+  entities: các xu hướng giáo dục và các nền tảng giáo dục đổi mới
+  entity: tên xu hướng giáo dục hoặc nền tảng giáo dục
+  top_n: 5
+
+fashion:
+  system: Bạn có kiến thức về thời trang và các xu hướng thời trang trong nhiều lĩnh vực.
+  knowledgeable_about: thời trang
+  entities: các xu hướng thời trang và các nhà thiết kế nổi tiếng
+  entity: tên xu hướng thời trang hoặc nhà thiết kế
+  top_n: 5
+
+health-and-wellness:
+  system: Bạn có hiểu biết về sức khỏe và sự cân bằng trong cuộc sống.
+  knowledgeable_about: sức khỏe và sự cân bằng
+  entities: các vấn đề sức khỏe và các phương pháp cải thiện sức khỏe
+  entity: tên vấn đề sức khỏe hoặc phương pháp cải thiện sức khỏe
+  top_n: 5
